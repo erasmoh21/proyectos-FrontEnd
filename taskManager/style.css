@@ -1,0 +1,270 @@
+* {
+    padding: 0; 
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body::-webkit-scrollbar {
+    width: 7px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 5px;
+}
+
+.contenedorHeader {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #F3F3F3;
+    color: #333;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+}
+
+.headerOscuro {
+    background-color: #202124;
+    color: #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+}
+
+.cambiadorTema {
+    display: flex;
+}
+
+.cambiadorTema img {
+    width: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+.cambiadorTema::after {
+    content:'';
+    display: flex;
+    width: 4rem;
+    height: .8rem;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    position: relative;
+    right: 40px;
+    top: 5px;
+}
+
+#sol {
+    visibility: hidden;
+    position: relative;
+    left: 2rem;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+}
+
+main {
+    background-color: #bebebe;
+    transition: all .5s ease;
+}
+
+.mainOscuro {
+    background-color: #202124;
+}
+
+.contenedorMain {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contenedorFormulario {
+    display: flex;
+    height: 100vh;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+    line-height: 2rem;
+}
+
+.elementosFormularios {
+    margin-top: 20px;
+}
+
+fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.elementosFormularios select {
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.elementosFormularios:nth-child(2) {
+    background-color: #F3F3F3;
+    border-radius: 5px;
+}
+
+
+textarea {
+    resize: none;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    padding: 5px;
+    background-color: #F3F3F3;
+}
+
+button {
+    border: none;
+    border-radius: .5rem;
+    padding: .5rem 0;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-weight: bolder;
+    background-color: #333333;
+    outline: none;
+}
+
+label {
+    font-weight: bolder;
+}
+
+.contenedorFooter {
+    background-color: #F3F3F3;
+    color: #333;
+    font-weight: bolder;
+    text-align: center;
+    padding: .5rem 0;
+    transition: all 1s ease;
+}
+
+.footerOscuro {
+    background-color: #202124;
+    color: #FFFFFF;
+    border-top: 1px solid #FFFFFF;        
+}
+
+.tasks {
+    width: 600px;
+    height: 400px;
+    scrollbar-color: #333;
+    display: grid;
+    grid-template-columns: 15rem 15rem;
+    gap: 2rem;
+    overflow-y: scroll;
+}
+
+.tasks::-webkit-scrollbar {
+    width: 4px;
+    height: 1px;
+}
+
+.tasks::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 5px;
+}
+
+.iconsDeleteAndUpdate {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: fixed;
+    top: 23rem;
+    right: 13rem;
+}
+
+.iconsDeleteAndUpdate div:nth-child(1) img{
+    background-color: red;
+    border-radius: 50%;
+    padding: .3rem;
+    cursor: pointer;
+}
+
+.iconsDeleteAndUpdate div:nth-child(2) img{
+    background-color: blue;
+    border-radius: 50%;
+    padding: .3rem;
+    cursor: pointer;
+}
+
+.contenedorCheckbox {
+    display: none;
+} 
+
+.tareas {
+    margin-bottom: 1rem;
+    padding-bottom: .8rem;
+    border-bottom: 1px solid #F3F3F3;
+    background-color: #FFFFFF;
+    border-radius: .8rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.tituloPrioridad {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.tareas p {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.actualizacionTarea {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease;
+}
+
+.actualizacionTarea .contenedorFormularioActualizacionTarea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.actualizacionTarea .contenedorFormularioActualizacionTarea form{
+    background-color: #bebebe;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.actualizacionTarea .contenedorFormularioActualizacionTarea form fieldset .tituloFormulario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.actualizacionTarea .contenedorFormularioActualizacionTarea form fieldset .tituloFormulario legend {
+    background-color: #FFFFFF;
+    padding: .5rem;
+    border-radius: 5px;
+    color: #000000;
+    font-weight: bolder;
+}
+
+.actualizacionTarea .contenedorFormularioActualizacionTarea form fieldset .tituloFormulario p {
+    text-transform: uppercase;
+    font-weight: bolder;
+    background-color: #FFFFFF;
+    padding: .2rem;
+    border-radius: 20%;
+    margin-left: 20px;
+    cursor: pointer;
+}

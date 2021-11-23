@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/index.js" defer type="module"></script>
+</head>
+<body>
+   
+        <div class="contenedorHeader">
+            <h1>Tasks Manager</h1>
+        
+            <div class="cambiadorTema">
+                <img src="./img/luna.svg" alt="logo luna" id="luna">
+                <img src="./img/sun.svg" alt="Logo sol" id="sol">
+            </div>
+        </div>
+        
+        <main>
+            <div class="contenedorMain">
+                <div class="contenedorFormulario">
+                    <form name="loco" id="form">
+                        <fieldset>
+                            <div class="elementosFormularios">
+                                <select name="tipoTarea" id="opcionesTareas">
+                                    <option value="Work">Work</option>
+                                    <option value="Personal">Personal</option>
+                                    <option value="Family">Family</option>
+                                    <option value="Entreprenurship">Entreprenurship</option>
+                                    <option value="Learning">learning</option>
+                                </select>
+                            </div>
+        
+                            <div class="elementosFormularios">
+                                <label for="Inmediately"><input type="radio" name="tipoPrioridad" id="Inmediately"
+                                        value="Inmediately" required>Inmediately</label><br>
+                                <label for="Today"><input type="radio" name="tipoPrioridad" id="hoy" value="Today"
+                                        required>Today</label><br>
+                                <label for="Tomorrow"><input type="radio" name="tipoPrioridad" id="manana" value="Tomorrow"
+                                        required>Tomorrow</label><br>
+                                <label for="Next Week"><input type="radio" name="tipoPrioridad" id="nextWeek" value="Next Week"
+                                        required>Next week</label>
+                            </div>
+        
+        
+                            <div class="elementosFormularios">
+                                <textarea name="taskDescription" cols="30" rows="10" placeholder="Digite algo"
+                                    id="descripcion"></textarea>
+                            </div>
+        
+                            <button id="botonEnvio" type="submit">Enviar</button>
+                        </fieldset>
+                    </form>
+                </div>
+        
+                <div class="tasks">
+                </div>
+                <div class="iconsDeleteAndUpdate">
+                    <div id="btn-delete">
+                        <img src="img/delete_white_24dp.svg" alt="Eliminar">
+                    </div>
+                    <div id="btn-update">
+                        <img src="img/update_white_24dp.svg" alt="Actualizar">
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div class="actualizacionTarea">
+            <div class="contenedorFormularioActualizacionTarea">
+                <form id="formActualizarTarea">
+                    <fieldset>
+                        <div class="tituloFormulario">
+                            <legend>Actualizacion de tarea</legend>
+                            <p id="cerrarFormularioActualizacion">x</p>
+                        </div>
+                        <div class="elementosFormularios">
+                            <select name="tipoTarea" id="opcionesTareas">
+                                <option value="Work">Work</option>
+                                <option value="Personal">Personal</option>
+                                <option value="Family">Family</option>
+                                <option value="Entreprenurship">Entreprenurship</option>
+                                <option value="Learning">learning</option>
+                            </select>
+                        </div>
+        
+                        <div class="elementosFormularios">
+                            <label for="Inmediately"><input type="radio" name="tipoPrioridad" id="Inmediately"
+                                    value="Inmediately" required>Inmediately</label><br>
+                            <label for="Today"><input type="radio" name="tipoPrioridad" id="hoy" value="Today"
+                                    required>Today</label><br>
+                            <label for="Tomorrow"><input type="radio" name="tipoPrioridad" id="manana" value="Tomorrow"
+                                    required>Tomorrow</label><br>
+                            <label for="Next Week"><input type="radio" name="tipoPrioridad" id="nextWeek" value="Next Week"
+                                    required>Next
+                                week</label>
+                        </div>
+        
+                        <div class="elementosFormularios">
+                            <textarea name="taskDescription" cols="30" rows="10" placeholder="Digite algo"
+                                id="descripcion"></textarea>
+                        </div>
+        
+                        <button id="botonEnvio" type="submit">Enviar</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="contenedorFooter">
+                <p>Derechos reservados a Jose Erasmo Hernandez Yate</p>
+            </div>
+        </footer>
+        
+       
+</body>
+</html>
