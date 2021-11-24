@@ -1,5 +1,5 @@
 export default function colorDePrioridad(task) {
-    if(task.tipoPrioridad == "Inmediately") {
+    if(task.tipoPrioridad == "Inmediate") {
         return "red";
     }
     if(task.tipoPrioridad == "Today") {
