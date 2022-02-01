@@ -1,6 +1,6 @@
 import colorDePrioridad from "./colorPrioridades.js"
 import elementosDelDom from "./elementosDom.js"
-const oscuro = document.querySelector('.oscuro')
+import validarCamposFormulario from "./validarCamposFormulario.js"
 let actualizar = false
 let contador = 0;
 
@@ -9,34 +9,46 @@ elementosDelDom.botonEliminar.addEventListener("click",() => {
     for(let i = 0; i < elementosDelDom.contenedorDeTareas.children.length; i++) {
         elementosDelDom.contenedorDeTareas.children[i].children[0].children[0].style.display = "block"
     }
-
 })
 
-elementosDelDom.botonEnvio.addEventListener('click',() => {
-    const form = new FormData(elementosDelDom.formulario)  
-
-    contador += 1;
-    let task = {
-        tipoTarea: form.get('tipoTarea'), 
-        tipoPrioridad: form.get('tipoPrioridad'),
-        descripcionTask: elementosDelDom.descripcionTarea.value
+elementosDelDom.botonEnvio.addEventListener('click',(e) => {
+    e.preventDefault()
+    const form = new FormData(elementosDelDom.formulario) 
+    
+    if(validarCamposFormulario(form.get('tipoPrioridad'),elementosDelDom.descripcionTarea) !== 0) {
+        elementosDelDom.sugerencia.classList.add('sugerenciaVista')
+        elementosDelDom.sugerencia.innerHTML = `
+            <img src="./img/highlight_off_black_24dp.svg">
+            <p>Le falta por digitar ${validarCamposFormulario(form.get('tipoPrioridad'),elementosDelDom.descripcionTarea)} input</p>
+        `
     }
+    else {
+        elementosDelDom.sugerencia.classList.remove('sugerenciaVista')
+        elementosDelDom.sugerencia.classList.add('sugerencia')
+        contador += 1;
+        let task = {
+            tipoTarea: form.get('tipoTarea'), 
+            tipoPrioridad: form.get('tipoPrioridad'),
+            descripcionTask: elementosDelDom.descripcionTarea.value
+        }
 
-    let contenedorTareas = `
-        <div class="tareas">
-            <div class="tituloPrioridad">
+        document.forms[0].reset()
+
+        let contenedorTareas = `
+            <div class="tareas">
+                <div class="tituloPrioridad">
                     <div class="contenedorCheckbox">
                         <input type="checkbox" id="checkboxTask name="${contador}">
                     </div>
                 
-                <h3>${task.tipoTarea}</h3>
-                <h5 style=color:${colorDePrioridad(task)};>${task.tipoPrioridad}</h5>
+                    <h3>${task.tipoTarea}</h3>
+                    <h5 style=color:${colorDePrioridad(task)};>${task.tipoPrioridad}</h5>
+                </div>
+                <p>${task.descripcionTask}</p>
             </div>
-            <p>${task.descripcionTask}</p>
-        </div>
-    `
-    document.forms[0].reset()
-    elementosDelDom.contenedorDeTareas.innerHTML += contenedorTareas
+        `
+        elementosDelDom.contenedorDeTareas.innerHTML += contenedorTareas
+    }    
 })
 
 elementosDelDom.logoLuna.addEventListener('click',() => {
@@ -68,7 +80,6 @@ elementosDelDom.contenedorDeTareas.addEventListener('change',(e) => {
         }
     }
 
-    console.log(elementosDelDom.contenedorDeTareas.children[0].children[0].children[0].children[0])
 })
 
 elementosDelDom.botonActualizar.addEventListener('click',() => {

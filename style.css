@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar {
@@ -75,6 +76,8 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    flex-basis: auto;
+    flex-shrink: 300px;
     flex-wrap: wrap;
 }
 
@@ -92,9 +95,21 @@ main {
 }
 
 fieldset {
-    border: none;
     display: flex;
     flex-direction: column;
+    border: none;
+}
+
+#form .sugerencia {
+    display: none;
+}
+
+#form .sugerenciaVista {
+    display: flex;
+    color: #FFFFFF;
+    background-color: red;
+    border-radius: 5px;
+    padding: .3rem;
 }
 
 .elementosFormularios select {
@@ -108,7 +123,6 @@ fieldset {
     background-color: #F3F3F3;
     border-radius: 5px;
 }
-
 
 textarea {
     resize: none;
@@ -158,6 +172,7 @@ label {
     grid-template-columns: 15rem 15rem;
     gap: 2rem;
     overflow-y: scroll;
+    flex-wrap: wrap;
 }
 
 .tasks::-webkit-scrollbar {
