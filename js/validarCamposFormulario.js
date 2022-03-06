@@ -5,7 +5,6 @@ export default function validarCamposFormulario(...inputs) {
     }
     if(inputs[1].value.trim().length == 0) {
         contadorDeInputsRealizados++
-        console.log(inputs[1].value.trim().length)
     }
 
     return contadorDeInputsRealizados;

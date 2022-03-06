@@ -12,11 +12,11 @@
    
     <header>
         <div class="contenedorHeader">
-            <h1>Tasks Manager</h1>
+            <h1 tabindex="1">Tasks Manager</h1>
             
             <div class="cambiadorTema">
-                <img src="./img/luna.svg" alt="logo luna" id="luna">
-                <img src="./img/sun.svg" alt="Logo sol" id="sol">
+                <img src="./img/luna.svg" alt="logo luna" id="luna" tabindex="2">
+                <img src="./img/sun.svg" alt="Logo sol" id="sol" tabindex="3">
             </div>
         </div>
     </header>
@@ -31,42 +31,48 @@
                     <fieldset>
                         <div class="elementosFormularios">
                             <select name="tipoTarea" id="opcionesTareas">
-                                <option value="Work">Work</option>
-                                <option value="Personal">Personal</option>
-                                <option value="Family">Family</option>
-                                <option value="Entreprenurship">Entreprenurship</option>
-                                <option value="Learning">learning</option>
+                                <option value="Work" tabindex="4">Work</option>
+                                <option value="Personal" tabindex="5">Personal</option>
+                                <option value="Family" tabindex="6">Family</option>
+                                <option value="Entreprenurship" tabindex="7">Entreprenurship</option>
+                                <option value="Learning" tabindex="8">learning</option>
                             </select>
                         </div>
         
                         <div class="elementosFormularios">
-                            <label for="Inmediately"><input type="radio" name="tipoPrioridad" class="tipoPrioridad" value="Inmediately">Inmediate</label><br>
+                            <label for="Inmediately" tabindex="9">Inmediate</label>
+                            <input type="radio" name="tipoPrioridad" class="tipoPrioridad" value="Inmediately"><br>
 
-                            <label for="Today"><input type="radio" name="tipoPrioridad" class="tipoPrioridad" value="Today">Today</label><br>
+                            <label for="Today" tabindex="10">Today</label>
+                            <input type="radio" name="tipoPrioridad" class="tipoPrioridad" value="Today"><br>
 
-                            <label for="Tomorrow"><input type="radio" name="tipoPrioridad" class="tipoPrioridad" value="Tomorrow">Tomorrow</label><br>
+                            <label for="Tomorrow" tabindex="11">Tomorrow</label>
+                            <input type="radio" name="tipoPrioridad" class="tipoPrioridad" value="Tomorrow"><br>
 
-                            <label for="Next Week"><input type="radio" name="tipoPrioridad" class="tipoPrioridad" value="Next Week">Next week</label>
+                            <label for="Next Week" tabindex="12">Next week</label>
+                            <input type="radio" name="tipoPrioridad" class="tipoPrioridad" value="Next Week">
                         </div>
         
         
                         <div class="elementosFormularios">
-                            <textarea name="taskDescription" cols="30" rows="10" placeholder="Digite algo"id="descripcion"></textarea>
+                            <textarea name="taskDescription" cols="30" rows="10" placeholder="Digite algo"id="descripcion" tabindex="13"></textarea>
                         </div>
         
-                        <button id="botonEnvio" type="submit">Enviar</button>
+                        <button id="botonEnvio" type="submit" tabindex="14">Enviar</button>
                     </fieldset>
                 </form>
             </div>
         
-            <div class="tasks">
-            </div>
-            <div class="iconsDeleteAndUpdate">
-                <div id="btn-delete">
-                    <img src="img/delete_white_24dp.svg" alt="Eliminar">
+            <div class="contenedorDeTareas">
+                <div class="tasks">
                 </div>
-                <div id="btn-update">
-                    <img src="img/update_white_24dp.svg" alt="Actualizar">
+                <div class="iconsDeleteAndUpdate">
+                    <figure id="btn-delete">
+                        <img src="img/delete_white_24dp.svg" alt="Eliminar">
+                    </figure>
+                    <figure id="btn-update">
+                        <img src="img/update_white_24dp.svg" alt="Actualizar">
+                    </figure>
                 </div>
             </div>
         </div>
