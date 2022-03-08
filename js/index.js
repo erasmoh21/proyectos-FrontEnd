@@ -69,7 +69,7 @@ elementosDelDom.logoSol.addEventListener('click',() => {
 
 elementosDelDom.contenedorDeTareas.addEventListener('change',(e) => {
     for(let i = 0; i < elementosDelDom.contenedorDeTareas.children.length; i++) {
-        if(elementosDelDom.contenedorDeTareas.children[i].children[0].children[0].children[0] == e.target && actualizar) {
+        if(elementosDelDom.contenedorDeTareas.children[i].children[0].children[0].children[0]== e.target && actualizar && elementosDelDom.contenedorDeTareas.children[i].children[0].children[0].children[0].checked) {
             elementosDelDom.actualizacionTarea.style.opacity = '1'
             elementosDelDom.actualizacionTarea.style.visibility = "visible"
             break;
@@ -83,10 +83,12 @@ elementosDelDom.contenedorDeTareas.addEventListener('change',(e) => {
 })
 
 elementosDelDom.botonActualizar.addEventListener('click',() => {
+    //elementosDelDom.contenedorDeTareas.children[0].children[0].children[0].children[0].checked 
     actualizar = true
     for(let i = 0; i < elementosDelDom.contenedorDeTareas.children.length; i++) {
         elementosDelDom.contenedorDeTareas.children[i].children[0].children[0].style.display = "block"
     }
+    
 })
 
 elementosDelDom.formActualizarTarea.addEventListener('submit',(e) => {
